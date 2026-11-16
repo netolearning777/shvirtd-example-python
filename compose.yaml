@@ -44,10 +44,3 @@ services:
       timeout: 3s
       retries: 5
       start_period: 10s
-
-networks:
-  backend:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 172.20.0.0/24
