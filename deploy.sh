@@ -5,7 +5,7 @@ set -e
 
 # --- НАСТРОЙКИ ---
 # URL репозитория
-REPO_URL="https://github.com/netolearning777/Docker_part2-hw.git"
+REPO_URL="https://github.com/netolearning777/shvirtd-example-python.git"
 # Имя папки, в которую клонируется проект внутри /opt
 PROJECT_DIR_NAME="my-project"
 TARGET_DIR="/opt/$PROJECT_DIR_NAME"
@@ -34,20 +34,6 @@ else
   git clone "$REPO_URL" "$TARGET_DIR"
   cd "$TARGET_DIR"
 fi
-
-# --- НАСТРОЙКА ОКРУЖЕНИЯ ---
-echo "Создаем файл .env с заданными параметрами..."
-cat << 'EOF' > .env
-MYSQL_ROOT_PASSWORD="YtReWq4321"
-MYSQL_DATABASE="virtd"
-MYSQL_USER="app"
-MYSQL_PASSWORD="QwErTy1234"
-
-DB_HOST="172.20.0.10"
-DB_USER="app"
-DB_PASSWORD="QwErTy1234"
-DB_NAME="virtd"
-EOF
 
 # Ограничиваем права на чтение файла с паролями (только для владельца)
 chmod 600 .env
